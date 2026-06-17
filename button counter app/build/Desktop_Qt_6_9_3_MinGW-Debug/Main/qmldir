@@ -1,0 +1,5 @@
+module Main
+typeinfo ButtonCounterApp.qmltypes
+prefer :/qt/qml/Main/
+depends QtQuick
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Counter App</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100vh; margin: 0; background-color: #f0f4f8;
+        }
+        .container {
+            background: white; padding: 40px; border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;
+        }
+        h1 { font-size: 48px; margin-bottom: 30px; color: #333; }
+        .buttons { display: flex; gap: 20px; justify-content: center; }
+        button { 
+            font-size: 18px; padding: 12px 24px; cursor: pointer; 
+            border: none; border-radius: 5px; background-color: #0078d7; color: white;
+            transition: background-color 0.2s;
+        }
+        button:hover { background-color: #005a9e; }
+        button.reset { background-color: #d13438; }
+        button.reset:hover { background-color: #a80000; }
+        #status { margin-top: 30px; font-weight: bold; color: #888; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="countDisplay">Count: 0</h1>
+        
+        <div class="buttons">
+            <button onclick="sendIncrement()">Increment</button>
+            <button class="reset" onclick="sendReset()">Reset</button>
+        </div>
+
+        <div id="status">Connecting to C++ Server...</div>
+    </div>
+
+    <script>
+        // 1. Connect to the Qt C++ WebSocket Server we just built
+        const socket = new WebSocket("ws://localhost:12345");
+        
+        const display = document.getElementById("countDisplay");
+        const status = document.getElementById("status");
+
+        // 2. What to do when the connection is successful
+        socket.onopen = function() {
+            status.innerText = "Status: Connected to Qt Backend!";
+            status.style.color = "green";
+        };
+
+        // 3. What to do when Qt broadcasts a new number
+        socket.onmessage = function(event) {
+            display.innerText = "Count: " + event.data;
+        };
+
+        // 4. What to do if the Qt app is closed
+        socket.onclose = function() {
+            status.innerText = "Status: Disconnected. Is the Qt app running?";
+            status.style.color = "red";
+        };
+
+        // 5. Send commands to Qt when buttons are clicked
+        function sendIncrement() {
+            if (socket.readyState === WebSocket.OPEN) {
+                socket.send("INCREMENT");
+            }
+        }
+
+        function sendReset() {
+            if (socket.readyState === WebSocket.OPEN) {
+                socket.send("RESET");
+            }
+        }
+    </script>
+</body>
+</html>

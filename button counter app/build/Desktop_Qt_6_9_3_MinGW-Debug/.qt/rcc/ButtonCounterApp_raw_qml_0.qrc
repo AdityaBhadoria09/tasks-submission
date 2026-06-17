@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/Main/">
+    <file alias="src/main.qml">F:/solar tasks/button counter app/src/main.qml</file>
+  </qresource>
+</RCC>
+

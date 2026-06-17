@@ -1,0 +1,87 @@
+        -:    0:Source:F:/solar tasks/button counter app/src/counter.cpp
+        -:    0:Graph:CMakeFiles\ButtonCounterApp.dir\src\counter.cpp.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    1:#include "counter.h"
+        -:    2:#include <QDebug>
+        -:    3:
+    #####:    4:Counter::Counter(QObject *parent) : QObject(parent), m_count(0) {
+        -:    5:    // 1. Boot up the server on port 12345
+    #####:    6:    m_server = new QWebSocketServer(QStringLiteral("Counter Server"), QWebSocketServer::NonSecureMode, this);
+    #####:    7:    if (m_server->listen(QHostAddress::Any, 12345)) {
+    #####:    8:        qDebug() << "Server successfully started on port 12345!";
+    #####:    9:        connect(m_server, &QWebSocketServer::newConnection, this, &Counter::onNewConnection);
+        -:   10:    }
+    #####:   11:}
+        -:   12:
+    #####:   13:Counter::~Counter() {
+    #####:   14:    m_server->close();
+    #####:   15:    qDeleteAll(m_clients.begin(), m_clients.end());
+    #####:   16:}
+------------------
+_ZN7CounterD0Ev:
+    #####:   13:Counter::~Counter() {
+        -:   14:    m_server->close();
+        -:   15:    qDeleteAll(m_clients.begin(), m_clients.end());
+    #####:   16:}
+------------------
+_ZN7CounterD2Ev:
+    #####:   13:Counter::~Counter() {
+    #####:   14:    m_server->close();
+    #####:   15:    qDeleteAll(m_clients.begin(), m_clients.end());
+    #####:   16:}
+------------------
+        -:   17:
+    #####:   18:int Counter::getValue() const {
+    #####:   19:    return m_count;
+        -:   20:}
+        -:   21:
+    #####:   22:void Counter::increment() {
+    #####:   23:    m_count++;
+    #####:   24:    emit valueChanged(); // Update Desktop UI
+    #####:   25:    broadcastValue();    // Update Web UI
+    #####:   26:}
+        -:   27:
+    #####:   28:void Counter::reset() {
+    #####:   29:    m_count = 0;
+    #####:   30:    emit valueChanged(); // Update Desktop UI
+    #####:   31:    broadcastValue();    // Update Web UI
+    #####:   32:}
+        -:   33:
+        -:   34:// --- NETWORK LOGIC ---
+        -:   35:
+    #####:   36:void Counter::onNewConnection() {
+    #####:   37:    QWebSocket *socket = m_server->nextPendingConnection();
+    #####:   38:    connect(socket, &QWebSocket::textMessageReceived, this, &Counter::processTextMessage);
+    #####:   39:    connect(socket, &QWebSocket::disconnected, this, &Counter::socketDisconnected);
+        -:   40:    
+    #####:   41:    m_clients << socket; // Add new web client to our list
+        -:   42:    
+        -:   43:    // Immediately send them the current count so they are in sync
+    #####:   44:    socket->sendTextMessage(QString::number(m_count));
+    #####:   45:}
+        -:   46:
+    #####:   47:void Counter::processTextMessage(QString message) {
+        -:   48:    // If the website sends a command, trigger our C++ logic
+    #####:   49:    if (message == "INCREMENT") {
+    #####:   50:        increment();
+    #####:   51:    } else if (message == "RESET") {
+    #####:   52:        reset();
+        -:   53:    }
+    #####:   54:}
+        -:   55:
+    #####:   56:void Counter::socketDisconnected() {
+    #####:   57:    QWebSocket *client = qobject_cast<QWebSocket *>(sender());
+    #####:   58:    if (client) {
+    #####:   59:        m_clients.removeAll(client);
+    #####:   60:        client->deleteLater();
+        -:   61:    }
+    #####:   62:}
+        -:   63:
+    #####:   64:void Counter::broadcastValue() {
+    #####:   65:    QString message = QString::number(m_count);
+        -:   66:    // Loop through every connected website and send the new number
+    #####:   67:    for (QWebSocket *client : std::as_const(m_clients)) {
+    #####:   68:        client->sendTextMessage(message);
+        -:   69:    }
+    #####:   70:}

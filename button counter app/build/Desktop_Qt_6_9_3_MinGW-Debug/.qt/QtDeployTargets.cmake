@@ -1,0 +1,3 @@
+set(__QT_DEPLOY_TARGET_ButtonCounterApp_FILE F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug/ButtonCounterApp.exe)
+set(__QT_DEPLOY_TARGET_ButtonCounterApp_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_ButtonCounterApp_RUNTIME_DLLS F:/6.9.3/mingw_64/bin/Qt6Quick.dll;F:/6.9.3/mingw_64/bin/Qt6WebSockets.dll;F:/6.9.3/mingw_64/bin/Qt6QmlMeta.dll;F:/6.9.3/mingw_64/bin/Qt6QmlWorkerScript.dll;F:/6.9.3/mingw_64/bin/Qt6QmlModels.dll;F:/6.9.3/mingw_64/bin/Qt6Qml.dll;F:/6.9.3/mingw_64/bin/Qt6OpenGL.dll;F:/6.9.3/mingw_64/bin/Qt6Gui.dll;F:/6.9.3/mingw_64/bin/Qt6Network.dll;F:/6.9.3/mingw_64/bin/Qt6Core.dll)

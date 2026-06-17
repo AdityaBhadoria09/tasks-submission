@@ -1,0 +1,15 @@
+-rootPath
+F:/solar tasks/button counter app
+-cmake-output
+-output-file
+F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug/.qt/qml_imports/ButtonCounterApp_build.cmake
+-importPath
+F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug/Main
+-importPath
+F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug
+-importPath
+F:/6.9.3/mingw_64/qml
+-qrcFiles
+F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug/.qt/rcc/qmake_Main.qrc
+F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug/.qt/rcc/ButtonCounterApp_raw_qml_0.qrc
+F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug/.qt/rcc/ButtonCounterApp_raw_qml_0_extra_qmldirs.qrc

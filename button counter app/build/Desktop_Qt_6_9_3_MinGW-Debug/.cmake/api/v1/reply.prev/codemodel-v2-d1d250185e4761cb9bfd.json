@@ -1,0 +1,195 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ButtonCounterProject",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp-Debug-0f8d65c30096b8f0bada.json",
+					"name" : "ButtonCounterApp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_autogen-Debug-70112f3c930aaf3cbc92.json",
+					"name" : "ButtonCounterApp_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_autogen_timestamp_deps-Debug-041cb9455ce256d0adb2.json",
+					"name" : "ButtonCounterApp_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_copy_qml-Debug-754f0d6dc02d846a56e9.json",
+					"name" : "ButtonCounterApp_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_copy_res-Debug-74a5850dd1ebfce5f352.json",
+					"name" : "ButtonCounterApp_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_qmlimportscan-Debug-62e03059b4cf0088062a.json",
+					"name" : "ButtonCounterApp_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_qmllint-Debug-7b4b09a0fdeb5256dfb7.json",
+					"name" : "ButtonCounterApp_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_qmllint_json-Debug-a3c5912ba5f31190f876.json",
+					"name" : "ButtonCounterApp_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_qmllint_module-Debug-a7ffc6f8bf1ed76651c1.json",
+					"name" : "ButtonCounterApp_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ButtonCounterApp_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ButtonCounterApp_qmltyperegistration-Debug-e65c9460f07dddb5915b.json",
+					"name" : "ButtonCounterApp_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-e52b7b67b2d9fb9dbce7.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-21fe60d85ead7e1824fd.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-9b8657fac354398d40ff.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-83eb2b43d72457f8f5d9.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-3e2b8c48388c33e00acd.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_ButtonCounterApp_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_ButtonCounterApp_aotstats_target-Debug-db045e6cda61446641f2.json",
+					"name" : "module_ButtonCounterApp_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "F:/solar tasks/button counter app/build/Desktop_Qt_6_9_3_MinGW-Debug",
+		"source" : "F:/solar tasks/button counter app"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

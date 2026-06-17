@@ -1,0 +1,47 @@
+        -:    0:Source:F:/6.9.3/mingw_64/include/QtCore/qstringliteral.h
+        -:    0:Graph:CMakeFiles\ButtonCounterApp.dir\src\counter.cpp.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    1:// Copyright (C) 2016 The Qt Company Ltd.
+        -:    2:// Copyright (C) 2020 Intel Corporation.
+        -:    3:// SPDX-License-Identifier: LicenseRef-Qt-Commercial OR LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
+        -:    4:
+        -:    5:#ifndef QSTRINGLITERAL_H
+        -:    6:#define QSTRINGLITERAL_H
+        -:    7:
+        -:    8:#include <QtCore/qarraydata.h>
+        -:    9:#include <QtCore/qarraydatapointer.h>
+        -:   10:
+        -:   11:#if 0
+        -:   12:#pragma qt_class(QStringLiteral)
+        -:   13:#endif
+        -:   14:
+        -:   15:QT_BEGIN_NAMESPACE
+        -:   16:
+        -:   17:// all our supported compilers support Unicode string literals,
+        -:   18:// even if their Q_COMPILER_UNICODE_STRING has been revoked due
+        -:   19:// to lacking stdlib support. But QStringLiteral only needs the
+        -:   20:// core language feature, so just use u"" here unconditionally:
+        -:   21:
+        -:   22:#define QT_UNICODE_LITERAL(str) u"" str
+        -:   23:
+        -:   24:using QStringPrivate = QArrayDataPointer<char16_t>;
+        -:   25:
+        -:   26:namespace QtPrivate {
+        -:   27:template <qsizetype N>
+        -:   28:static Q_ALWAYS_INLINE QStringPrivate qMakeStringPrivate(const char16_t (&literal)[N])
+        -:   29:{
+        -:   30:    // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast)
+    #####:   31:    auto str = const_cast<char16_t *>(literal);
+    #####:   32:    return { nullptr, str, N - 1 };
+        -:   33:}
+        -:   34:}
+        -:   35:
+        -:   36:#define QStringLiteral(str) \
+        -:   37:    (QString(QtPrivate::qMakeStringPrivate(QT_UNICODE_LITERAL(str)))) \
+        -:   38:    /**/
+        -:   39:
+        -:   40:
+        -:   41:QT_END_NAMESPACE
+        -:   42:
+        -:   43:#endif // QSTRINGLITERAL_H
